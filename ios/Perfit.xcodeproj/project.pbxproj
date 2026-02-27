@@ -11,6 +11,11 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		ED2AF598094E4760AA2D1F91 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEA28DBFEB25458AADDF787E /* PermanentMarker-Regular.ttf */; };
+		E9E204FE86C1440A9F7EE785 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5436FB3B14324E14B21FF82B /* Montserrat-BoldItalic.ttf */; };
+		F16BC85231B741059676F937 /* ScienceGothic_Condensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6680D84AA34F52AD917027 /* ScienceGothic_Condensed-ExtraBold.ttf */; };
+		1C27EA3A47B54F7C88FADA70 /* ScienceGothic_Condensed-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D04BB8C0F924C618EAFC36B /* ScienceGothic_Condensed-SemiBold.ttf */; };
+		B7C2708B77DD4EA5A59D4420 /* ScienceGothic_Expanded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8DA75AF1ABE45C7B57E476D /* ScienceGothic_Expanded-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Perfit/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Perfit/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		DEA28DBFEB25458AADDF787E /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; name = "PermanentMarker-Regular.ttf"; path = "../src/assets/fonts/PermanentMarker-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5436FB3B14324E14B21FF82B /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-BoldItalic.ttf"; path = "../src/assets/fonts/Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E6680D84AA34F52AD917027 /* ScienceGothic_Condensed-ExtraBold.ttf */ = {isa = PBXFileReference; name = "ScienceGothic_Condensed-ExtraBold.ttf"; path = "../src/assets/fonts/ScienceGothic_Condensed-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D04BB8C0F924C618EAFC36B /* ScienceGothic_Condensed-SemiBold.ttf */ = {isa = PBXFileReference; name = "ScienceGothic_Condensed-SemiBold.ttf"; path = "../src/assets/fonts/ScienceGothic_Condensed-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B8DA75AF1ABE45C7B57E476D /* ScienceGothic_Expanded-Bold.ttf */ = {isa = PBXFileReference; name = "ScienceGothic_Expanded-Bold.ttf"; path = "../src/assets/fonts/ScienceGothic_Expanded-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				FBFD6502C345427BA4CEFDE1 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -96,6 +107,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		FBFD6502C345427BA4CEFDE1 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				DEA28DBFEB25458AADDF787E /* PermanentMarker-Regular.ttf */,
+				5436FB3B14324E14B21FF82B /* Montserrat-BoldItalic.ttf */,
+				9E6680D84AA34F52AD917027 /* ScienceGothic_Condensed-ExtraBold.ttf */,
+				6D04BB8C0F924C618EAFC36B /* ScienceGothic_Condensed-SemiBold.ttf */,
+				B8DA75AF1ABE45C7B57E476D /* ScienceGothic_Expanded-Bold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -159,6 +183,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				ED2AF598094E4760AA2D1F91 /* PermanentMarker-Regular.ttf in Resources */,
+				E9E204FE86C1440A9F7EE785 /* Montserrat-BoldItalic.ttf in Resources */,
+				F16BC85231B741059676F937 /* ScienceGothic_Condensed-ExtraBold.ttf in Resources */,
+				1C27EA3A47B54F7C88FADA70 /* ScienceGothic_Condensed-SemiBold.ttf in Resources */,
+				B7C2708B77DD4EA5A59D4420 /* ScienceGothic_Expanded-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

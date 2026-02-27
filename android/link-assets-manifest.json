@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Montserrat-BoldItalic.ttf",
+      "sha1": "cd3789ae55cc702776afdd2fd1a81ae16c69fbf4"
+    },
+    {
+      "path": "src/assets/fonts/PermanentMarker-Regular.ttf",
+      "sha1": "bc40bfbc7eb7715af82b136429848a3c7a83a2b3"
+    },
+    {
+      "path": "src/assets/fonts/ScienceGothic_Condensed-ExtraBold.ttf",
+      "sha1": "ac580fd070dc8edb13d65eec3cde02885e5a5463"
+    },
+    {
+      "path": "src/assets/fonts/ScienceGothic_Condensed-SemiBold.ttf",
+      "sha1": "757bcd98ff12d4b9e7b02b89dd41882a133d5d65"
+    },
+    {
+      "path": "src/assets/fonts/ScienceGothic_Expanded-Bold.ttf",
+      "sha1": "e8fd57518d07fe92cc4abddaa1aad409d58c720a"
+    }
+  ]
+}
