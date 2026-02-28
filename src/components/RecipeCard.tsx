@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface RecipeCardProps {
   title: string;
-  calories: number;
-  time: number;
-  servings: number;
+  calories: string | number; // String de gelebilir number da, esnek yaptık
+  time: string | number;
+  servings: string | number;
   protein: string;
   fat: string;
   carbs: string;
@@ -20,30 +20,37 @@ export default function RecipeCard({
 }: RecipeCardProps) {
   return (
     <View style={styles.cardWrapper}>
-      {/* Sol Taraf: Bilgiler */}
+      
+      {/* SOL TARAF: Bilgiler */}
       <View style={styles.leftContainer}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title} numberOfLines={1}>{title.toUpperCase()}</Text>
         
-        {/* BÜYÜTÜLMÜŞ Meta Bilgiler */}
-        <View style={styles.metaRow}>
-          <Text style={styles.metaText}>🔥 {calories} kcal</Text>
-          <Text style={styles.metaText}>⏱️ {time} dk</Text>
-          <Text style={styles.metaText}>🍽️ {servings} kş</Text>
+        {/* FİGMA'DAKİ O HARİKA İKİLİ GRİ KUTU SİSTEMİ 🔥 */}
+        <View style={styles.infoBoxesRow}>
+          
+          {/* 1. Kutu: Temel Meta Bilgiler */}
+          <View style={styles.greyBox}>
+            <Text style={styles.boxText}>🔥 {calories} kcal</Text>
+            <Text style={styles.boxText}>⏱ {time} dk</Text>
+            <Text style={styles.boxText}>🍽 {servings} kş</Text>
+          </View>
+          
+          {/* 2. Kutu: Makro Değerleri */}
+          <View style={styles.greyBox}>
+            <Text style={styles.boxText}>🥚 Pro: {protein}</Text>
+            <Text style={styles.boxText}>🥑 Yağ: {fat}</Text>
+            <Text style={styles.boxText}>🍞 Karb: {carbs}</Text>
+          </View>
+
         </View>
 
-        {/* RENKLERİ SADELEŞTİRİLMİŞ MAKROLAR */}
-        <View style={styles.macrosContainer}>
-          <Text style={styles.macroLabel}>Protein: <Text style={styles.macroValue}>{protein}</Text></Text>
-          <Text style={styles.macroLabel}>Yağ: <Text style={styles.macroValue}>{fat}</Text></Text>
-          <Text style={styles.macroLabel}>Karb: <Text style={styles.macroValue}>{carbs}</Text></Text>
-        </View>
-
+        {/* Tarife Git Butonu */}
         <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.8}>
           <Text style={styles.buttonText}>TARİFE GİT</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Sağ Taraf: Yemek Görseli */}
+      {/* SAĞ TARAF: Yemek Görseli */}
       <View style={styles.rightContainer}>
         <ImageBackground 
           source={{ uri: imageUrl }} 
@@ -54,11 +61,13 @@ export default function RecipeCard({
             borderBottomRightRadius: 16,
           }}
         >
+          {/* Favori (Bookmark) İkonu */}
           <TouchableOpacity style={styles.bookmarkButton} onPress={onBookmarkPress}>
             <Icon name="bookmark-outline" size={24} color="#fff" />
           </TouchableOpacity>
         </ImageBackground>
       </View>
+
     </View>
   );
 }
@@ -68,9 +77,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     backgroundColor: '#2A2A2A', 
     borderRadius: 16,
+    marginBottom: 20, // Kartlar arası boşluk
+    height: 205, // Figma'ya daha uygun
     marginHorizontal: 20,
-    marginBottom: 15,
-    height: 220, 
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
@@ -78,60 +87,52 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   leftContainer: {
-    flex: 1.2, 
+    flex: 1.3, // Sol tarafı (yazıları) resme göre biraz daha geniş tuttuk
     paddingVertical: 15,
-    paddingHorizontal: 10,
-    alignItems: 'center', 
+    paddingHorizontal: 12,
     justifyContent: 'space-between', 
   },
   title: {
     color: '#fff',
-    fontSize: 17, 
+    fontSize: 16, 
     fontWeight: '900',
     letterSpacing: 1,
-    marginTop: 5,
     textAlign: 'center',
+    marginBottom: 5,
   },
   
-  // ÜST BİLGİLER (Kalori vs. Büyütüldü)
-  metaRow: {
+  // İKİLİ KUTU SİSTEMİNİN STİLLERİ
+  infoBoxesRow: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: 8, // İki kutu arası boşluk
+  },
+  greyBox: {
+    flex: 1,
+    backgroundColor: '#3b3b3b', // O şık gri tonu
+    paddingVertical: 8,
+    paddingHorizontal: 5,
+    borderRadius: 12,
     justifyContent: 'center',
-    flexWrap: 'wrap', 
-    gap: 8, // Yazılar büyüdüğü için aralarını biraz daha açtık
   },
-  metaText: {
-    color: '#ddd',
-    fontSize: 12, // 10'dan 12'ye çıkarıldı
+  boxText: {
+    color: '#ccc',
+    fontSize: 11,
     fontWeight: '600',
-  },
-  
-  // ALT BİLGİLER (Renkler nötrleştirildi)
-  macrosContainer: {
-    alignItems: 'center',
-    gap: 4, 
-  },
-  macroLabel: {
-    color: '#bbb',
-    fontSize: 13, 
-    fontWeight: '600',
-  },
-  macroValue: {
-    color: '#fff', // Turuncu iptal edildi, net okunması için saf beyaz yapıldı!
-    fontSize: 14,
-    fontWeight: '900',
+    marginBottom: 4,
+    marginLeft: 2,
   },
 
   button: {
     backgroundColor: '#EC740A', 
     paddingVertical: 10,
-    paddingHorizontal: 22,
     borderRadius: 20, 
-    marginBottom: 5,
+    alignItems: 'center',
+    marginTop: 5,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: 'bold',
     letterSpacing: 1,
   },
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   bookmarkButton: {
-    backgroundColor: 'rgba(0,0,0,0.5)', 
+    backgroundColor: 'rgba(0,0,0,0.4)', 
     padding: 6,
     borderRadius: 8,
   }
